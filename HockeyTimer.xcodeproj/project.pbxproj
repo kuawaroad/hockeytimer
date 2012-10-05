@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B4AED8C4161F5BAE000EEE2C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AED8C3161F5BAE000EEE2C /* UIKit.framework */; };
+		B4AED8C6161F5BAE000EEE2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AED8C5161F5BAE000EEE2C /* Foundation.framework */; };
+		B4AED8C8161F5BAE000EEE2C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AED8C7161F5BAE000EEE2C /* CoreGraphics.framework */; };
+		B4AED8CE161F5BAE000EEE2C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B4AED8CC161F5BAE000EEE2C /* InfoPlist.strings */; };
+		B4AED8D0161F5BAE000EEE2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AED8CF161F5BAE000EEE2C /* main.m */; };
+		B4AED8D4161F5BAE000EEE2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AED8D3161F5BAE000EEE2C /* AppDelegate.m */; };
+		B4AED8D7161F5BAE000EEE2C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4AED8D5161F5BAE000EEE2C /* MainStoryboard.storyboard */; };
+		B4AED8DA161F5BAF000EEE2C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AED8D9161F5BAF000EEE2C /* MainViewController.m */; };
+		B4AED8DD161F5BAF000EEE2C /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AED8DC161F5BAF000EEE2C /* FlipsideViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B4AED8BF161F5BAE000EEE2C /* HockeyTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HockeyTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4AED8C3161F5BAE000EEE2C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B4AED8C5161F5BAE000EEE2C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B4AED8C7161F5BAE000EEE2C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B4AED8CB161F5BAE000EEE2C /* HockeyTimer-Info.plist */ = {isa = PBXFileReference; path = "HockeyTimer-Info.plist"; sourceTree = "<group>"; };
+		B4AED8CD161F5BAE000EEE2C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B4AED8CF161F5BAE000EEE2C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B4AED8D1161F5BAE000EEE2C /* HockeyTimer-Prefix.pch */ = {isa = PBXFileReference; path = "HockeyTimer-Prefix.pch"; sourceTree = "<group>"; };
+		B4AED8D2161F5BAE000EEE2C /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		B4AED8D3161F5BAE000EEE2C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B4AED8D6161F5BAE000EEE2C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		B4AED8D8161F5BAE000EEE2C /* MainViewController.h */ = {isa = PBXFileReference; path = MainViewController.h; sourceTree = "<group>"; };
+		B4AED8D9161F5BAF000EEE2C /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		B4AED8DB161F5BAF000EEE2C /* FlipsideViewController.h */ = {isa = PBXFileReference; path = FlipsideViewController.h; sourceTree = "<group>"; };
+		B4AED8DC161F5BAF000EEE2C /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B4AED8BC161F5BAE000EEE2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4AED8C4161F5BAE000EEE2C /* UIKit.framework in Frameworks */,
+				B4AED8C6161F5BAE000EEE2C /* Foundation.framework in Frameworks */,
+				B4AED8C8161F5BAE000EEE2C /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B4AED8B4161F5BAE000EEE2C = {
+			isa = PBXGroup;
+			children = (
+				B4AED8C9161F5BAE000EEE2C /* HockeyTimer */,
+				B4AED8C2161F5BAE000EEE2C /* Frameworks */,
+				B4AED8C0161F5BAE000EEE2C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B4AED8C0161F5BAE000EEE2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4AED8BF161F5BAE000EEE2C /* HockeyTimer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4AED8C2161F5BAE000EEE2C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4AED8C3161F5BAE000EEE2C /* UIKit.framework */,
+				B4AED8C5161F5BAE000EEE2C /* Foundation.framework */,
+				B4AED8C7161F5BAE000EEE2C /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4AED8C9161F5BAE000EEE2C /* HockeyTimer */ = {
+			isa = PBXGroup;
+			children = (
+				B4AED8D2161F5BAE000EEE2C /* AppDelegate.h */,
+				B4AED8D3161F5BAE000EEE2C /* AppDelegate.m */,
+				B4AED8D5161F5BAE000EEE2C /* MainStoryboard.storyboard */,
+				B4AED8D8161F5BAE000EEE2C /* MainViewController.h */,
+				B4AED8D9161F5BAF000EEE2C /* MainViewController.m */,
+				B4AED8DB161F5BAF000EEE2C /* FlipsideViewController.h */,
+				B4AED8DC161F5BAF000EEE2C /* FlipsideViewController.m */,
+				B4AED8CA161F5BAE000EEE2C /* Supporting Files */,
+			);
+			path = HockeyTimer;
+			sourceTree = "<group>";
+		};
+		B4AED8CA161F5BAE000EEE2C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B4AED8CB161F5BAE000EEE2C /* HockeyTimer-Info.plist */,
+				B4AED8CC161F5BAE000EEE2C /* InfoPlist.strings */,
+				B4AED8CF161F5BAE000EEE2C /* main.m */,
+				B4AED8D1161F5BAE000EEE2C /* HockeyTimer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B4AED8BE161F5BAE000EEE2C /* HockeyTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4AED8E0161F5BAF000EEE2C /* Build configuration list for PBXNativeTarget "HockeyTimer" */;
+			buildPhases = (
+				B4AED8BB161F5BAE000EEE2C /* Sources */,
+				B4AED8BC161F5BAE000EEE2C /* Frameworks */,
+				B4AED8BD161F5BAE000EEE2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HockeyTimer;
+			productName = HockeyTimer;
+			productReference = B4AED8BF161F5BAE000EEE2C /* HockeyTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B4AED8B6161F5BAE000EEE2C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Kuawa Road Productions";
+			};
+			buildConfigurationList = B4AED8B9161F5BAE000EEE2C /* Build configuration list for PBXProject "HockeyTimer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B4AED8B4161F5BAE000EEE2C;
+			productRefGroup = B4AED8C0161F5BAE000EEE2C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4AED8BE161F5BAE000EEE2C /* HockeyTimer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B4AED8BD161F5BAE000EEE2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4AED8CE161F5BAE000EEE2C /* InfoPlist.strings in Resources */,
+				B4AED8D7161F5BAE000EEE2C /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B4AED8BB161F5BAE000EEE2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4AED8D0161F5BAE000EEE2C /* main.m in Sources */,
+				B4AED8D4161F5BAE000EEE2C /* AppDelegate.m in Sources */,
+				B4AED8DA161F5BAF000EEE2C /* MainViewController.m in Sources */,
+				B4AED8DD161F5BAF000EEE2C /* FlipsideViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B4AED8CC161F5BAE000EEE2C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4AED8CD161F5BAE000EEE2C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B4AED8D5161F5BAE000EEE2C /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4AED8D6161F5BAE000EEE2C /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B4AED8DE161F5BAF000EEE2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B4AED8DF161F5BAF000EEE2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B4AED8E1161F5BAF000EEE2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HockeyTimer/HockeyTimer-Prefix.pch";
+				INFOPLIST_FILE = "HockeyTimer/HockeyTimer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B4AED8E2161F5BAF000EEE2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HockeyTimer/HockeyTimer-Prefix.pch";
+				INFOPLIST_FILE = "HockeyTimer/HockeyTimer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B4AED8B9161F5BAE000EEE2C /* Build configuration list for PBXProject "HockeyTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4AED8DE161F5BAF000EEE2C /* Debug */,
+				B4AED8DF161F5BAF000EEE2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4AED8E0161F5BAF000EEE2C /* Build configuration list for PBXNativeTarget "HockeyTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4AED8E1161F5BAF000EEE2C /* Debug */,
+				B4AED8E2161F5BAF000EEE2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B4AED8B6161F5BAE000EEE2C /* Project object */;
+}
