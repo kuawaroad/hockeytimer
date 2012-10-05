@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FirstBuzzer</key>
+	<integer>90</integer>
+	<key>SecondBuzzer</key>
+	<integer>120</integer>
+	<key>Repeats</key>
+	<integer>999</integer>
+	<key>AutoRepeat</key>
+	<true/>
+</dict>
+</plist>

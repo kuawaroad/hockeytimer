@@ -21,7 +21,7 @@
 		B4AED8E9161F7FBA000EEE2C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AED8E8161F7FBA000EEE2C /* AudioToolbox.framework */; };
 		B4AED8EB161F80A0000EEE2C /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4AED8EA161F80A0000EEE2C /* explosion.mp3 */; };
 		B4AED8ED161F855C000EEE2C /* power_down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4AED8EC161F855C000EEE2C /* power_down.mp3 */; };
-		B4AED8F0161F9005000EEE2C /* TimeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AED8EF161F9005000EEE2C /* TimeObject.m */; };
+		B4AED8F2161F9F68000EEE2C /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4AED8F1161F9F68000EEE2C /* Defaults.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +46,7 @@
 		B4AED8E8161F7FBA000EEE2C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B4AED8EA161F80A0000EEE2C /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
 		B4AED8EC161F855C000EEE2C /* power_down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = power_down.mp3; sourceTree = "<group>"; };
-		B4AED8EE161F9005000EEE2C /* TimeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeObject.h; sourceTree = "<group>"; };
-		B4AED8EF161F9005000EEE2C /* TimeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeObject.m; sourceTree = "<group>"; };
+		B4AED8F1161F9F68000EEE2C /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +104,7 @@
 				B4AED8DC161F5BAF000EEE2C /* FlipsideViewController.m */,
 				B4AED8E5161F7D33000EEE2C /* AudioPlayer.h */,
 				B4AED8E6161F7D33000EEE2C /* AudioPlayer.m */,
-				B4AED8EE161F9005000EEE2C /* TimeObject.h */,
-				B4AED8EF161F9005000EEE2C /* TimeObject.m */,
+				B4AED8F1161F9F68000EEE2C /* Defaults.plist */,
 				B4AED8EC161F855C000EEE2C /* power_down.mp3 */,
 				B4AED8E3161F6587000EEE2C /* fastBeep.mp3 */,
 				B4AED8EA161F80A0000EEE2C /* explosion.mp3 */,
@@ -182,6 +180,7 @@
 				B4AED8E4161F6587000EEE2C /* fastBeep.mp3 in Resources */,
 				B4AED8EB161F80A0000EEE2C /* explosion.mp3 in Resources */,
 				B4AED8ED161F855C000EEE2C /* power_down.mp3 in Resources */,
+				B4AED8F2161F9F68000EEE2C /* Defaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +196,6 @@
 				B4AED8DA161F5BAF000EEE2C /* MainViewController.m in Sources */,
 				B4AED8DD161F5BAF000EEE2C /* FlipsideViewController.m in Sources */,
 				B4AED8E7161F7D33000EEE2C /* AudioPlayer.m in Sources */,
-				B4AED8F0161F9005000EEE2C /* TimeObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
