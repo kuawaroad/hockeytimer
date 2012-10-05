@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>FirstBuzzer</key>
-	<integer>90</integer>
+	<integer>3</integer>
 	<key>SecondBuzzer</key>
-	<integer>120</integer>
+	<integer>5</integer>
 	<key>Repeats</key>
-	<integer>999</integer>
+	<integer>2</integer>
 	<key>AutoRepeat</key>
 	<true/>
 </dict>

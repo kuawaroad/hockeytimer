@@ -14,9 +14,12 @@
     BOOL timerActive;
     int currentTime;
     int repetitionsLeft;
+    int firstTriggerTime;
+    int secondTriggerTime;
     AudioPlayer *firstBuzzer;
     AudioPlayer *secondBuzzer;
     NSTimer *timer;
+    NSUserDefaults *defaults;
 }
 
 @end
@@ -34,9 +37,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     timerActive = NO;
+    defaults = [NSUserDefaults standardUserDefaults];
+    repetitionsLeft = [defaults integerForKey:@"Repeats"];
+    firstTriggerTime = [defaults integerForKey:@"FirstBuzzer"];
+    secondTriggerTime = [defaults integerForKey:@"SecondBuzzer"];
+    [self refreshInterface];
 }
-
-
 
 - (void)viewDidUnload
 {
@@ -73,19 +79,68 @@
 -(void)stopTimer {
     NSLog(@"Stopping Timer.");
     [timer invalidate];
+    timerActive = NO;
+    currentTime = 0;
+    repetitionsLeft = [defaults integerForKey:@"Repeats"];
     [self.infoButton setEnabled:YES];
+    [self refreshInterface];
 }
 
 -(void)tickTock {
-    NSLog(@"Tick Tock %f",timer.timeInterval);
     currentTime++;
+    NSLog(@"Tick Tock %i",currentTime);
     [self checkForBuzzer];
     [self refreshInterface];
 }
 
 -(void)refreshInterface {
-    int tempMins = currentTime/60;
-    int tempSecs = currentTime % 60;
+    
+    self.timeDisplay.text = [self formatTime:currentTime];
+    self.repeatDisplay.text = [NSString stringWithFormat:@"Repetitions:%i",repetitionsLeft];
+    self.firstBuzzerDisplay.text = [self formatTime:firstTriggerTime];
+    self.secondBuzzerDisplay.text = [self formatTime:secondTriggerTime];
+
+}
+
+-(void)restartTimer {
+    NSLog(@"Resetting Timer");
+    currentTime = 0;
+    
+}
+
+-(void)checkForBuzzer {
+    // check current time against NSUserDefaults
+    if (currentTime == firstTriggerTime) {
+        [self playFirstBuzzer];
+    } else if (currentTime == secondTriggerTime) {
+        [self playSecondBuzzer];
+    }
+}
+
+-(void)playFirstBuzzer {
+    NSLog(@"Playing 1st Buzzer");
+    firstBuzzer = [[AudioPlayer alloc] initWithSoundNamed:@"power_down" ofType:@"mp3"];
+    [firstBuzzer play];
+}
+
+-(void)playSecondBuzzer {
+    NSLog(@"Playing 2nd Buzzer");
+    secondBuzzer = [[AudioPlayer alloc] initWithSoundNamed:@"explosion" ofType:@"mp3"];
+    [secondBuzzer play];
+    repetitionsLeft--;
+    
+    if (repetitionsLeft <= 0) {
+        NSLog(@"Repetitions Over, Cancelling");
+        [self stopTimer];
+    } else {
+        [self restartTimer];
+    }
+    [self refreshInterface];
+}
+
+-(NSString *)formatTime:(int)timeInSeconds {
+    int tempMins = timeInSeconds/60;
+    int tempSecs = timeInSeconds % 60;
     NSString *minutesString;
     if (tempMins < 10) {
         minutesString = [NSString stringWithFormat:@"0%i",tempMins];
@@ -99,40 +154,9 @@
     } else {
         secondsString = [NSString stringWithFormat:@"%i",tempSecs];
     }
-    
-    NSString *timeString = [NSString stringWithFormat:@"%@:%@",minutesString,secondsString];
-    self.timeDisplay.text = timeString;
-    
-    self.repeatDisplay.text = [NSString stringWithFormat:@""];
-    
+    return [NSString stringWithFormat:@"%@:%@",minutesString,secondsString];
 }
 
--(void)resetTimer {
-    NSLog(@"Resetting Timer");
-    currentTime = 0;
-    
-    if (repetitionsLeft > 0) {
-        [self startTimer];
-    } else {
-        [self stopTimer];
-    }
-}
-
--(void)checkForBuzzer {
-    // check current time against NSUserDefaults
-}
-
--(void)playFirstBuzzer {
-    NSLog(@"Playing 1st Buzzer");
-    firstBuzzer = [[AudioPlayer alloc] initWithSoundNamed:@"power_down" ofType:@"mp3"];
-    [firstBuzzer play];
-}
-
--(void)playSecondBuzzer {
-    NSLog(@"Playing 2nd Buzzer");
-    secondBuzzer = [[AudioPlayer alloc] initWithSoundNamed:@"explosion" ofType:@"mp3"];
-    [secondBuzzer play];
-}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
