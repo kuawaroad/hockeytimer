@@ -17,6 +17,9 @@
 @interface FlipsideViewController : UIViewController
 
 @property (weak, nonatomic) id <FlipsideViewControllerDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UITextField *firstBuzzerTime;
+@property (strong, nonatomic) IBOutlet UITextField *secondBuzzerTime;
+@property (strong, nonatomic) IBOutlet UITextField *repeatTime;
 
 - (IBAction)done:(id)sender;
 

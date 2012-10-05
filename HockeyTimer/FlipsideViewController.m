@@ -15,6 +15,9 @@
 @implementation FlipsideViewController
 
 @synthesize delegate = _delegate;
+@synthesize firstBuzzerTime = _firstBuzzerTime;
+@synthesize secondBuzzerTime = _secondBuzzerTime;
+@synthesize repeatTime = _repeatTime;
 
 - (void)viewDidLoad
 {
@@ -22,8 +25,18 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)touchesEnded: (NSSet *)touches withEvent: (UIEvent *)event {
+    for (UIView* view in self.view.subviews) {
+        if ([view isKindOfClass:[UITextField class]])
+            [view resignFirstResponder];
+    }
+}
+
 - (void)viewDidUnload
 {
+    [self setFirstBuzzerTime:nil];
+    [self setSecondBuzzerTime:nil];
+    [self setRepeatTime:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
