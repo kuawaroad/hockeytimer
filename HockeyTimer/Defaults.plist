@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>FirstBuzzer</key>
-	<integer>5</integer>
-	<key>SecondBuzzer</key>
 	<integer>3</integer>
+	<key>SecondBuzzer</key>
+	<integer>5</integer>
 	<key>Repeats</key>
 	<integer>3</integer>
 	<key>AutoRepeat</key>

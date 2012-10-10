@@ -80,8 +80,8 @@
     NSLog(@"Stopping Timer.");
     [timer invalidate];
     timerActive = NO;
-    currentTime = 0;
-    repetitionsLeft = [defaults integerForKey:@"Repeats"];
+    //currentTime = 0;
+    //repetitionsLeft = [defaults integerForKey:@"Repeats"];
     [self.infoButton setEnabled:YES];
     [self refreshInterface];
 }
@@ -102,8 +102,14 @@
 
 }
 
--(void)restartTimer {
+-(void)resetTimer {
     NSLog(@"Resetting Timer");
+    currentTime = 0;
+    repetitionsLeft = [defaults integerForKey:@"Repeats"];
+}
+
+-(void)restartTimer {
+    NSLog(@"Restarting (LOOPING) Timer");
     currentTime = 0;
     
 }
@@ -127,11 +133,12 @@
     NSLog(@"Playing 2nd Buzzer");
     secondBuzzer = [[AudioPlayer alloc] initWithSoundNamed:@"explosion" ofType:@"mp3"];
     [secondBuzzer play];
-    repetitionsLeft--;
     
+    repetitionsLeft--;
     if (repetitionsLeft <= 0) {
         NSLog(@"Repetitions Over, Cancelling");
         [self stopTimer];
+        [self resetTimer];
     } else {
         [self restartTimer];
     }
