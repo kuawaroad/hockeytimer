@@ -29,6 +29,7 @@
 @synthesize repeatDisplay;
 @synthesize firstBuzzerDisplay;
 @synthesize secondBuzzerDisplay;
+@synthesize refreshButton;
 @synthesize infoButton;
 
 
@@ -53,6 +54,7 @@
     [self setInfoButton:nil];
     firstBuzzer = nil;
     secondBuzzer = nil;
+    [self setRefreshButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -68,11 +70,18 @@
     }
 }
 
+- (IBAction)refreshTapped:(id)sender {
+    NSLog(@"Refresh Tapped");
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Reset Timer?" message:@"You're about to reset the timer, are you sure?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+    [alertView show];
+}
+
 -(void)startTimer {
     NSLog(@"Starting Timer...");
     // schedule NSTimers
     timerActive = YES;
     [self.infoButton setEnabled:NO];
+    [self.refreshButton setEnabled:NO];
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tickTock) userInfo:nil repeats:YES];
 }
 
@@ -83,6 +92,7 @@
     //currentTime = 0;
     //repetitionsLeft = [defaults integerForKey:@"Repeats"];
     [self.infoButton setEnabled:YES];
+    [self.refreshButton setEnabled:YES];
     [self refreshInterface];
 }
 
@@ -106,12 +116,12 @@
     NSLog(@"Resetting Timer");
     currentTime = 0;
     repetitionsLeft = [defaults integerForKey:@"Repeats"];
+    [self refreshInterface];
 }
 
 -(void)restartTimer {
     NSLog(@"Restarting (LOOPING) Timer");
     currentTime = 0;
-    
 }
 
 -(void)checkForBuzzer {
@@ -162,6 +172,17 @@
         secondsString = [NSString stringWithFormat:@"%i",tempSecs];
     }
     return [NSString stringWithFormat:@"%@:%@",minutesString,secondsString];
+}
+
+#pragma mark UIAlertView Delegate
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSLog(@"Button Index = %i",buttonIndex);
+    if (buttonIndex == 1) {
+        // YES button tapped
+        [self stopTimer];
+        [self resetTimer];
+    }
 }
 
 
