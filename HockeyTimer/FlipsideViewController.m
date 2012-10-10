@@ -8,7 +8,10 @@
 
 #import "FlipsideViewController.h"
 
-@interface FlipsideViewController ()
+@interface FlipsideViewController () {
+    // iVars
+    NSUserDefaults *defaults;
+}
 
 @end
 
@@ -23,6 +26,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    defaults = [NSUserDefaults standardUserDefaults];
+    self.firstBuzzerTime.text = [NSString stringWithFormat:@"%i",[defaults integerForKey:@"FirstBuzzer"]];
+    self.secondBuzzerTime.text = [NSString stringWithFormat:@"%i",[defaults integerForKey:@"SecondBuzzer"]];
+    self.repeatTime.text = [NSString stringWithFormat:@"%i",[defaults integerForKey:@"Repeats"]];
 }
 
 - (void)touchesEnded: (NSSet *)touches withEvent: (UIEvent *)event {
@@ -50,6 +57,12 @@
 
 - (IBAction)done:(id)sender
 {
+    NSLog(@"Flipside DONE: Setting UserDefaults");
+    [defaults setInteger:[self.firstBuzzerTime.text intValue] forKey:@"FirstBuzzer"];
+    [defaults setInteger:[self.secondBuzzerTime.text intValue] forKey:@"SecondBuzzer"];
+    [defaults setInteger:[self.repeatTime.text intValue] forKey:@"Repeats"];
+    [defaults synchronize];
+    
     [self.delegate flipsideViewControllerDidFinish:self];
 }
 

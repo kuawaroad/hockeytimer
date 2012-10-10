@@ -109,7 +109,6 @@
     self.repeatDisplay.text = [NSString stringWithFormat:@"Repetitions:%i",repetitionsLeft];
     self.firstBuzzerDisplay.text = [self formatTime:firstTriggerTime];
     self.secondBuzzerDisplay.text = [self formatTime:secondTriggerTime];
-
 }
 
 -(void)resetTimer {
@@ -155,6 +154,14 @@
     [self refreshInterface];
 }
 
+-(void)refreshDefaults {
+    currentTime = 0;
+    repetitionsLeft = [defaults integerForKey:@"Repeats"];
+    firstTriggerTime = [defaults integerForKey:@"FirstBuzzer"];
+    secondTriggerTime = [defaults integerForKey:@"SecondBuzzer"];
+    [self refreshInterface];
+}
+
 -(NSString *)formatTime:(int)timeInSeconds {
     int tempMins = timeInSeconds/60;
     int tempSecs = timeInSeconds % 60;
@@ -195,12 +202,14 @@
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
 {
+    [self refreshDefaults];
     [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
+        [self resetTimer];
         [[segue destinationViewController] setDelegate:self];
     }
 }
