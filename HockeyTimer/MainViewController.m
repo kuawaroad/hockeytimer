@@ -31,6 +31,7 @@
 @synthesize secondBuzzerDisplay;
 @synthesize refreshButton;
 @synthesize infoButton;
+@synthesize startButton;
 
 
 - (void)viewDidLoad
@@ -42,7 +43,25 @@
     repetitionsLeft = [defaults integerForKey:@"Repeats"];
     firstTriggerTime = [defaults integerForKey:@"FirstBuzzer"];
     secondTriggerTime = [defaults integerForKey:@"SecondBuzzer"];
+    
+    [self customizeInterface];
+    
     [self refreshInterface];
+}
+
+-(void)customizeInterface {
+    self.timeDisplay.font = [UIFont fontWithName:@"Crystal" size:88.0];
+    self.repeatDisplay.font = [UIFont fontWithName:@"Crystal" size:50.0];
+    self.firstBuzzerDisplay.font = [UIFont fontWithName:@"Crystal" size:40.0];
+    self.secondBuzzerDisplay.font = [UIFont fontWithName:@"Crystal" size:40.0];
+    self.startButton.titleLabel.font = [UIFont fontWithName:@"Crystal" size:30.0];
+    self.startButton.titleLabel.textColor = [UIColor blackColor];
+    
+    UIColor *textColor = [UIColor colorWithRed:159/255.0 green:229/255.0 blue:0/255.0 alpha:1.0];
+    self.timeDisplay.textColor = textColor;
+    self.repeatDisplay.textColor = textColor;
+    self.firstBuzzerDisplay.textColor = textColor;
+    self.secondBuzzerDisplay.textColor = textColor;
 }
 
 - (void)viewDidUnload
@@ -55,6 +74,7 @@
     firstBuzzer = nil;
     secondBuzzer = nil;
     [self setRefreshButton:nil];
+    [self setStartButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -106,9 +126,9 @@
 -(void)refreshInterface {
     
     self.timeDisplay.text = [self formatTime:currentTime];
-    self.repeatDisplay.text = [NSString stringWithFormat:@"Repetitions:%i",repetitionsLeft];
-    self.firstBuzzerDisplay.text = [self formatTime:firstTriggerTime];
-    self.secondBuzzerDisplay.text = [self formatTime:secondTriggerTime];
+    self.repeatDisplay.text = [NSString stringWithFormat:@"REPETITIONS: %i",repetitionsLeft];
+    self.firstBuzzerDisplay.text = [NSString stringWithFormat:@"1ST: %@",[self formatTime:firstTriggerTime]];
+    self.secondBuzzerDisplay.text = [NSString stringWithFormat:@"2ND: %@",[self formatTime:secondTriggerTime]];
 }
 
 -(void)resetTimer {
@@ -134,13 +154,13 @@
 
 -(void)playFirstBuzzer {
     NSLog(@"Playing 1st Buzzer");
-    firstBuzzer = [[AudioPlayer alloc] initWithSoundNamed:@"power_down" ofType:@"mp3"];
+    firstBuzzer = [[AudioPlayer alloc] initWithSoundNamed:@"airhorn1x" ofType:@"mp3"];
     [firstBuzzer play];
 }
 
 -(void)playSecondBuzzer {
     NSLog(@"Playing 2nd Buzzer");
-    secondBuzzer = [[AudioPlayer alloc] initWithSoundNamed:@"explosion" ofType:@"mp3"];
+    secondBuzzer = [[AudioPlayer alloc] initWithSoundNamed:@"airhorn2x" ofType:@"mp3"];
     [secondBuzzer play];
     
     repetitionsLeft--;

@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *secondBuzzerDisplay;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
 @property (strong, nonatomic) IBOutlet UIButton *infoButton;
+@property (strong, nonatomic) IBOutlet UIButton *startButton;
 - (IBAction)startButtonTapped:(id)sender;
 - (IBAction)refreshTapped:(id)sender;
 

@@ -20,6 +20,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *firstBuzzerTime;
 @property (strong, nonatomic) IBOutlet UITextField *secondBuzzerTime;
 @property (strong, nonatomic) IBOutlet UITextField *repeatTime;
+@property (strong, nonatomic) IBOutlet UILabel *firstLabel;
+@property (strong, nonatomic) IBOutlet UILabel *secondLabel;
+@property (strong, nonatomic) IBOutlet UILabel *repeatLabel;
 
 - (IBAction)done:(id)sender;
 
